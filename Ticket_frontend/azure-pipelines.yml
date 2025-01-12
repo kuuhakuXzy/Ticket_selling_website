@@ -1,0 +1,33 @@
+trigger:
+  branches:
+    include:
+      - Frontend
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '18.x'
+    displayName: 'Install Node.js'
+
+  - script: |
+      npm install
+    displayName: 'Install npm packages'
+
+  - script: |
+      npm run build
+    displayName: 'Build the project'
+
+  - task: CopyFiles@2
+    inputs:
+      contents: '**/*'
+      targetFolder: '$(Build.ArtifactStagingDirectory)'
+    displayName: 'Copy Files to Staging Directory'
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathToPublish: '$(Build.ArtifactStagingDirectory)'
+      artifactName: 'drop'
+    displayName: 'Publish Build Artifacts'

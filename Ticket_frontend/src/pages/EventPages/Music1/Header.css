@@ -1,0 +1,92 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20rem; 
+    padding: 1.5rem;
+    background-color: #00bfa5;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  .logo-container {
+    margin-right: 2rem; /* Moves the EventPage button slightly to the right */
+  }
+  
+  .logo-button {
+    background-color: transparent;
+    border: 2px transparent;
+    color: white;
+    font-size: 2.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .logo-button:hover {
+    border-color: white; /* Transparent border that appears on hover */
+  }
+  
+  .search-bar {
+    width: 600px; /* Reduced width of the search bar */
+    margin: 0 1.5rem;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .buttons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .buttons button {
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    color: #00bfa5;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .account {
+    position: relative;
+  }
+  
+  .account button {
+    width: 200px;
+    background-color: white;
+    color: #00bfa5;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    color: #333;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown a {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #00bfa5;
+    text-decoration: none;
+  }
+  
+  .dropdown a:last-child {
+    margin-bottom: 0;
+  }
+  
+  .dropdown a:hover {
+    color: #00796b;
+  }

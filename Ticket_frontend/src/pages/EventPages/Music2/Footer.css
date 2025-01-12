@@ -1,0 +1,27 @@
+.footer {
+    background-color: #f1f1f1;
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  /* Footer Section */
+  footer {
+    width: 60%; /* Set the width to 60% of the parent container */
+    margin-left: 10%; /* Add 10% empty space on the left */
+    margin-right: 30%; /* Add 30% empty space on the right */
+    background-color: white; /* Set background color to dark gray */
+    color: black; /* Set text color to white */
+    padding: 20px; /* Add some padding */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+  }
+  
+  .organizer-info h3 {
+    font-size: 24px;
+  }
+  
+  .organizer-info p {
+    font-size: 18px;
+  }
+  

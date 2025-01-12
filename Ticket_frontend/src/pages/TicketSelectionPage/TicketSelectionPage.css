@@ -1,0 +1,58 @@
+.ticket-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .ticket-details {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin: 20px 0;
+  }
+  
+  .ticket-type {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    font-size: 1.2em;
+  }
+  
+  .quantity-selector {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-selector button {
+    width: 30px;
+    height: 30px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+  }
+  
+  .coupon-section {
+    margin: 20px 0;
+    width: 60%;
+  }
+  
+  .coupon-section input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+  }
+  
+  .purchase-button {
+    padding: 10px 20px;
+    background-color: #00bfa5;
+    color: white;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+  }
+  

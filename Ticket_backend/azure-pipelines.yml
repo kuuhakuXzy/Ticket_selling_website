@@ -1,0 +1,44 @@
+trigger:
+  branches:
+    include:
+      - Back-end
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - task: JavaToolInstaller@0
+    inputs:
+      versionSpec: '21'
+      jdkArchitectureOption: 'x64'
+      jdkSourceOption: 'PreInstalled'
+
+  - script: chmod +x demo/gradlew
+    displayName: 'Set Execute Permission For gradlew'
+
+  - script: |
+      export SPRING_DATASOURCE_URL=jdbc:mysql://28f8-115-79-208-57.ngrok-free.app/EventTicketing
+      export SPRING_DATASOURCE_USERNAME=EventTicketing
+      export SPRING_DATASOURCE_PASSWORD=12345
+      export SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    displayName: 'Set MySQL Connection Environment Variables'
+
+  - task: Gradle@3
+    inputs:
+      gradleWrapperFile: 'demo/gradlew'
+      workingDirectory: 'demo'
+      options: '-x test'
+      tasks: 'build'
+    displayName: 'Gradle Build'
+
+  - task: CopyFiles@2
+    inputs:
+      contents: '**/build/libs/*.jar'
+      targetFolder: '$(Build.ArtifactStagingDirectory)'
+    displayName: 'Copy Artifacts'
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      ArtifactName: 'drop'
+    displayName: 'Publish Artifacts'
